@@ -1,11 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Button, Image } from 'react-native';
-import { Camera } from 'expo-camera';
+import { SearchBar } from 'react-native-elements';
 
 
 export default function HomePage({ navigation }) {
+  const [search, setSearch] = useState("");
+
+  updateSearch = (query) => {
+    setSearch({ query });
+  }
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.container}>
+      <SearchBar 
+        placeholder='Search Friends'
+        onChangeText={this.updateSearch}
+        value={search}
+        platform="ios"
+      />
       <Text>Home</Text>
       <Button
         title="Camera"
@@ -18,12 +29,9 @@ export default function HomePage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  cameraContainer: {
+  container: {
     flex: 1,
-    flexDirection: 'row',
-  },
-  fixedRatio: {
-    flex: 1,
-    aspectRatio: 1
+    backgroundColor: "#F3F3F3",
+    margin: "5"
   }
 });

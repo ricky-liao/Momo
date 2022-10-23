@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 function MainStackNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Upload'>
+      <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name="Home" component={HomePage} />
         <Stack.Screen name="Camera" component={CameraPage} />
         <Stack.Screen name="Upload" component={UploadPage} />
